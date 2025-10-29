@@ -141,7 +141,7 @@ export default function PaymentContent() {
               {userData?.profilePic ? (
                 <Image
                   className="rounded-full w-full h-full object-cover border border-white"
-                  src={userData.profilePic}
+                  src={userData?.profilePic}
                   alt="Profile picture"
                   width={120}
                   height={120}
