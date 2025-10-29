@@ -123,7 +123,7 @@ useEffect(() => {
                 <div className="image w-full h-3/4 flex flex-col items-center mb-16">
                     <div className="w-[100vw] h-[337.750px] max-[550px]:h-[125px] bg-[#292828] overflow-hidden">
                         {userData?.profileCover ? (
-                            <image className="w-full max-h-100% max-[550px]:h-full max-[550px]:object-cover" src={userData?.profileCover} />
+                            <Image className="w-full max-h-100% max-[550px]:h-full max-[550px]:object-cover" src={userData?.profileCover} />
 
                         ) : (
                             <div className="w-full h-full bg-[#3d3d3d]" />
@@ -132,14 +132,14 @@ useEffect(() => {
                     <div className="relative flex justify-center">
                         <div className="icon w-30 h-30 max-[550px]:w-20 max-[550px]:h-20 max-[550px]:-bottom-14 bg-[#292828] absolute flex justify-center items-center -bottom-22 rounded-full border border-gray-600 overflow-hidden">
                             {userData?.profilePic ? (
-                                <image
+                                <Image
                                     className="rounded-full w-full h-full object-cover border border-white"
                                     src={userData?.profilePic}
                                     alt=""
                                 />
                             ) : (
                                 <div className="w-full h-full bg-gray-600 flex items-center justify-center">
-                                    <image className='w-full h-full' src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User profile"></image>
+                                    <Image className='w-full h-full' src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User profile"></Image>
                                 </div>
                             )}
                         </div>

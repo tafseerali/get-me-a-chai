@@ -23,7 +23,7 @@ export default function Home() {
           </div>
         </div>
         <div className="image w-1/2 max-[750px]:w-full flex flex-col justify-center items-center">
-          <image className="w-[95%] max-[550px]:h-screen max-[550px]:object-cover rounded-br-[20%] max-[750px]:absolute max-[750px]:top-0 max-[750px]:rounded-none max-[750px]:w-full max-[750px]:opacity-40 rounded-tl-[20%]" src="/introImage.webp" alt="" />
+          <Image className="w-[95%] max-[550px]:h-screen max-[550px]:object-cover rounded-br-[20%] max-[750px]:absolute max-[750px]:top-0 max-[750px]:rounded-none max-[750px]:w-full max-[750px]:opacity-40 rounded-tl-[20%]" src="/introImage.webp" alt="" />
         </div>
       </div>
 

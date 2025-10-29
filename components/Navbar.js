@@ -123,7 +123,7 @@ const Navbar = () => {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto my-auto h-[70px] px-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <image src="/logo.png" className="h-8" alt="Flowbite Logo" />
+            <Image src="/logo.png" className="h-8" alt="Flowbite Logo" />
             <span className="self-center text-2xl max-[550px]:text-[17px] font-semibold whitespace-nowrap dark:text-white">GetMeaChai</span>
           </Link>
           <div className="flex items-center h-full md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-8 max-[1130px]:gap-2 justify-end relative">
@@ -149,7 +149,7 @@ const Navbar = () => {
                       <li key={item._id} className='flex w-full hover:bg-[#171717] group cursor-default transition-all duration-200 border-b border-[#d4d4d4]'>
                         <Link className="w-full h-full px-3 py-1 gap-2 flex items-center" href={`/${item.username}`} >
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
-                            <image className='' src={item.profilePic} alt="" />
+                            <Image className='' src={item.profilePic} alt="" />
                           </div>
                           <div>
                             <h3 className='font-bold group-hover:text-[#d4d4d4] transition-all duration-200'>{item.name}</h3>
@@ -185,7 +185,7 @@ const Navbar = () => {
                     <button onClick={() => setOpenDropdown(!openDropdown)} onBlur={() => setTimeout(() => { setOpenDropdown(false) }, 150)} type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                       <span className="sr-only">Open user menu</span>
                       <div className='w-8 h-8 rounded-full bg-gray-600'>
-                        <image className="w-8 h-8 rounded-full" src={session.user.image} alt="user photo" />
+                        <Image className="w-8 h-8 rounded-full" src={session.user.image} alt="user photo" />
                       </div>
                     </button>
                   </div>

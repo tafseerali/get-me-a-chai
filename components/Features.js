@@ -23,9 +23,9 @@ const Features = () => {
                     {cardContent.map((item, index)=>{
                    return <div key={index} className="card rounded-xl w-[350px] h-[360px] border border-gray-800 flex justify-center items-center bg-[#131428] transform transition duration-300 group hover:-translate-y-3">
                         <div className="cardContainer max-[550px]:justify-center w-[85%] h-[85%] flex flex-col items-center justify-center gap-8">
-                            <div className="image flex justify-center items-center">
+                            <div className="Image flex justify-center items-center">
                                 <div className="bg w-20 h-20 rounded-3xl bg-[#5c50d9] flex justify-center items-center transform transition duration-300 group-hover:scale-105">
-                                    <image className='w-16 h-16' src={item.URL} alt="" />
+                                    <Image className='w-16 h-16' src={item.URL} alt="" />
                                 </div>
                             </div>
                             <div className="heading flex flex-col items-center gap-3">

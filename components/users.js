@@ -84,7 +84,7 @@ const Users = () => {
                                             <li key={item._id} className='hover:bg-[#3b3b3b] rounded-xl h-20 w-full'>
                                                 <Link className='w-full h-full flex items-center gap-2 px-2' href={`/${item.username}`}>
                                                      <div className='w-[50px] h-[50px] bg-[#575757] rounded-lg overflow-hidden shrink-0'>
-                                                        <image className='' src={item.profilePic} alt="" />
+                                                        <Image className='' src={item.profilePic} alt="" />
                                                     </div>
 
                                                     <div className='w-full h-full flex flex-col justify-center'>
