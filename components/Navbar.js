@@ -158,6 +158,7 @@ const Navbar = () => {
                                 className="object-cover"
                                 onError={(e) => { e.currentTarget.src = '/default-user.png'; }}
                               />
+
                             </div>
 
                           </div>
