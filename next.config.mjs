@@ -6,6 +6,7 @@ const nextConfig = {
         domains: [
             'encrypted-tbn0.gstatic.com',
             'cdn-icons-png.flaticon.com', // any other external domains you use
+            'lh3.googleusercontent.com', // Google profile images
         ]
     }
 };
