@@ -6,6 +6,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useLoading } from '@/app/(main)/context/LoadingContext';
 import { fetchUserByEmail, fetchAllUser } from '@/app/actions/useractions';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const { setisLoadingDashboard } = useLoading();
