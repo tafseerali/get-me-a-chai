@@ -99,7 +99,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleClickOutsid = (e) => {
       if (toggleRef.current && !toggleRef.current.contains(e.target)) {
         setTimeout(() => {
@@ -150,7 +150,16 @@ const Navbar = () => {
                       <li key={item._id} className='flex w-full hover:bg-[#171717] group cursor-default transition-all duration-200 border-b border-[#d4d4d4]'>
                         <Link className="w-full h-full px-3 py-1 gap-2 flex items-center" href={`/${item.username}`} >
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
-                            <Image className='' src={item.profilePic} alt="" />
+                            <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
+                              <Image
+                                src={item.profilePic || '/default-user.png'}
+                                alt="User profile"
+                                fill
+                                className="object-cover"
+                                onError={(e) => { e.currentTarget.src = '/default-user.png'; }}
+                              />
+                            </div>
+
                           </div>
                           <div>
                             <h3 className='font-bold group-hover:text-[#d4d4d4] transition-all duration-200'>{item.name}</h3>
@@ -161,8 +170,8 @@ const Navbar = () => {
                     )
                   })}
                   <li className='bg-gray-900 text-white font-semibold absolute bottom-0 w-full py-3 flex justify-center'>
-                   <Link href='/users'> View all users ➜ </Link>
-                    </li>
+                    <Link href='/users'> View all users ➜ </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -186,14 +195,14 @@ const Navbar = () => {
                     <button onClick={() => setOpenDropdown(!openDropdown)} onBlur={() => setTimeout(() => { setOpenDropdown(false) }, 150)} type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                       <span className="sr-only">Open user menu</span>
                       <div className='w-8 h-8 rounded-full bg-gray-600'>
-                        <Image className="w-8 h-8 rounded-full" src={session.user.image} alt="user photo" />
+                        <Image className="w-8 h-8 rounded-full" src={session?.user?.image} alt="user photo" />
                       </div>
                     </button>
                   </div>
                   <div className={`absolute ${!openDropdown ? "hidden" : ""} mt-4 top-[100%] z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600`} id="user-dropdown">
                     <div className="px-4 py-3">
-                      <span className="block text-sm text-gray-900 dark:text-white">{session.user.name}</span>
-                      <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{session.user.email}</span>
+                      <span className="block text-sm text-gray-900 dark:text-white">{session?.user?.name}</span>
+                      <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{session?.user?.email}</span>
                     </div>
                     <ul className="py-2" aria-labelledby="user-menu-button">
                       <li>
@@ -216,7 +225,7 @@ const Navbar = () => {
             </div>
 
 
-            <button ref={toggleRef} onClick={()=>setIsMenuOpen(!isMenuOpen)} data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 max-[550px]:w-8 max-[550px]:h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+            <button ref={toggleRef} onClick={() => setIsMenuOpen(!isMenuOpen)} data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 max-[550px]:w-8 max-[550px]:h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
