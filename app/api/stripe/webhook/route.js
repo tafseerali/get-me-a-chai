@@ -18,7 +18,7 @@ export async function POST(req) {
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
 
-      await mongoose.connect("mongodb://localhost:27017/getmeachai");
+      await mongoose.connect(process.env.MONGO_URI);
 
       await Payment.findOneAndUpdate(
         { oid: session.id },

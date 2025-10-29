@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params: rawParams }) {
   const params = await rawParams
   const username = params.username;
-  await mongoose.connect('mongodb://localhost:27017/getmeachai');
+  await mongoose.connect(process.env.MONGO_URI);
 
   const user = await User.findOne({ username }).lean();
   if (!user) {

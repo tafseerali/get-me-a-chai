@@ -23,7 +23,7 @@ export const authOptions = {
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       if(account.provider === "google" || account.provider === "github"){
-        const client = await mongoose.connect("mongodb://localhost:27017/getmeachai")
+        const client = await mongoose.connect(process.env.MONGO_URI)
         const existingUser = await User.findOne({ email:user.email });
         if (!existingUser) {
           const newUser = new User({

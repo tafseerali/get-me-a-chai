@@ -11,7 +11,7 @@ import User from "@/models/User";
 
 export async function POST(req) {
   try {
-    await mongoose.connect("mongodb://localhost:27017/getmeachai");
+    await mongoose.connect(process.env.MONGO_URI);
 
     const sessionAuth = await getServerSession({req, ...authOptions});
     const email = sessionAuth?.user?.email || "guest@example.com";
