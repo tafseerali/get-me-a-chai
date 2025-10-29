@@ -39,12 +39,6 @@ export default function PaymentContent() {
     }, [pathname, searchParams, router]);
 
 
-    // ✅ Fetch user & payment data
-useEffect(() => {
-  if (!username) return;
-  getData();
-}, [username, getData]);
-
     const getData = async () => {
         setUserData(null);
         try {
@@ -60,6 +54,12 @@ useEffect(() => {
             toast.error("Failed to load profile data")
         }
     };
+
+    // ✅ Fetch user & payment data
+useEffect(() => {
+  if (!username) return;
+  getData();
+}, [username, getData]);
 
     // ✅ Handle checkout
     const handleCheckout = async (e) => {
