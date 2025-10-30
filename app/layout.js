@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
       <head>
         <ThemeModeScript />
          <link rel="icon" href="/logo.png" sizes="any" />
+         <meta name="google-site-verification" content="oZonLHfhtwnr0rlgbcG4GUbPyHNFcKF0g_4bmHX6vrk" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <SessionWrapper>
