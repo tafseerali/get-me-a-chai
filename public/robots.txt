@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gmchai.vercel.app
+
+# Sitemaps
+Sitemap: https://gmchai.vercel.app/sitemap.xml
