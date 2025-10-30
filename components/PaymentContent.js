@@ -139,7 +139,7 @@ export default function PaymentContent() {
 
 
                             <Image
-                                src={userData?.profilePic || "default-user.png"}
+                                src={userData?.profilePic || "/default-user.png"}
                                 alt="User profile"
                                 fill
                                 className="rounded-full w-[-webkit-fill-available] h-[-webkit-fill-available] object-cover border border-white"
