@@ -84,7 +84,7 @@ const Users = () => {
                                             <li key={item._id} className='hover:bg-[#3b3b3b] rounded-xl h-20 w-full'>
                                                 <Link className='w-full h-full flex items-center gap-2 px-2' href={`/${item.username}`}>
                                                     <div className='w-[50px] h-[50px] bg-[#575757] rounded-lg overflow-hidden shrink-0'>
-                                                        <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
+                                                        <div className="relative w-full h-full">
                                                             <img
                                                                 src={item.profilePic || "/default-user.png"}
                                                                 alt="User profile"

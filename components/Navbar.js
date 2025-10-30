@@ -149,7 +149,7 @@ const Navbar = () => {
                       <li key={item._id} className='flex w-full hover:bg-[#171717] group cursor-default transition-all duration-200 border-b border-[#d4d4d4]'>
                         <Link className="w-full h-full px-3 py-1 gap-2 flex items-center" href={`/${item.username}`} >
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
-                            <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
+                            <div className="relative w-full h-full">
                               <img
                                 src={item.profilePic || "/default-user.png"}
                                 alt="User profile"
