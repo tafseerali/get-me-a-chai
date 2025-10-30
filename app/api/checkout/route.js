@@ -1,30 +1,18 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
-import Payment from "../../../models/Payments";
-import { authOptions } from "../auth/[...nextauth]/route";  
+import Payment from "@/models/Payments";
 import { getServerSession } from "next-auth";
-import User from "@/models/User";
+import { authOptions } from "../../auth/[...nextauth]/route";
 
-
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export async function POST(req) {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-
-    const sessionAuth = await getServerSession({req, ...authOptions});
+    const sessionAuth = await getServerSession(authOptions);
     const email = sessionAuth?.user?.email || "guest@example.com";
 
-    // read stripe secert from DB
-    const dbUser = await User.findOne({ email }).lean();
-    const stripeSecretFromDb = dbUser?.stripeSecret
-
-    if(!stripeSecretFromDb){
-      return NextResponse.json({error: "Stripe secret not found"}, {status: 500});
-    }
-
-    const stripe = new Stripe(stripeSecretFromDb);
     const { amount, name, to_user, message, username } = await req.json();
 
     const session = await stripe.checkout.sessions.create({
@@ -35,7 +23,7 @@ export async function POST(req) {
           price_data: {
             currency: "usd",
             product_data: { name: `Payment to ${to_user}` },
-            unit_amount: amount * 100, // dollars → cents
+            unit_amount: amount * 100,
           },
           quantity: 1,
         },
@@ -53,11 +41,11 @@ export async function POST(req) {
       message,
       amount,
       done: false,
-    })
+    });
 
     return NextResponse.json({ url: session.url });
-  } catch (error) {
-    console.error("Stripe error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (err) {
+    console.error("Stripe error:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
