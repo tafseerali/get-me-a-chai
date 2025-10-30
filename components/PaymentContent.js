@@ -125,7 +125,7 @@ export default function PaymentContent() {
                 <div className="image w-full h-3/4 flex flex-col items-center mb-16">
                     <div className="w-[100vw] h-[337.750px] max-[550px]:h-[125px] bg-[#292828] overflow-hidden">
                         <Image
-                            src={userData?.profileCover}
+                            src={userData?.profileCover || "/default-cover.png"}
                             alt="User cover"
                             fill
                             className="w-full object-cover"
@@ -139,7 +139,7 @@ export default function PaymentContent() {
 
 
                             <Image
-                                src={userData?.profilePic}
+                                src={userData?.profilePic || "default-user.png"}
                                 alt="User profile"
                                 fill
                                 className="rounded-full w-[-webkit-fill-available] h-[-webkit-fill-available] object-cover border border-white"
