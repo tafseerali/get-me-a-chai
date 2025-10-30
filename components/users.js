@@ -5,7 +5,6 @@ import { Toaster, toast } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import SafeImage from "@/components/SafeImage";
 
 const Users = () => {
     const [allUsers, setAllUsers] = useState([])
@@ -87,7 +86,7 @@ const Users = () => {
                                                 <Link className='w-full h-full flex items-center gap-2 px-2' href={`/${item.username}`}>
                                                     <div className='w-[50px] h-[50px] bg-[#575757] rounded-lg overflow-hidden shrink-0'>
                                                         <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
-                                                            <SafeImage
+                                                            <Image
                                                                 src={item.profilePic}
                                                                 alt="User profile"
                                                                 fill

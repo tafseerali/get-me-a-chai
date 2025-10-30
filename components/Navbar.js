@@ -7,7 +7,6 @@ import { useLoading } from '@/app/(main)/context/LoadingContext';
 import { fetchUserByEmail, fetchAllUser } from '@/app/actions/useractions';
 import { useRef } from 'react';
 import Image from 'next/image';
-import SafeImage from "@/components/SafeImage";
 
 const Navbar = () => {
   const { setisLoadingDashboard } = useLoading();
@@ -152,7 +151,7 @@ const Navbar = () => {
                         <Link className="w-full h-full px-3 py-1 gap-2 flex items-center" href={`/${item.username}`} >
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
                             <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
-                              <SafeImage
+                              <Image
                                 src={item.profilePic}
                                 alt="User profile"
                                 fill
