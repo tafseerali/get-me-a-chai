@@ -86,9 +86,10 @@ const Users = () => {
                                                     <div className='w-[50px] h-[50px] bg-[#575757] rounded-lg overflow-hidden shrink-0'>
                                                         <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
                                                             <Image
-                                                                src={item.profilePic}
+                                                                src={item.profilePic || "/default-user.png"}
                                                                 alt="User profile"
                                                                 fill
+                                                                unoptimized
                                                                 className="object-cover"
                                                             />
                                                         </div>

@@ -83,7 +83,6 @@ const Navbar = () => {
     try {
       const users = await fetchAllUser();
       setAllUsers(users)
-      console.log(users)
     } catch {
       console.log("error fetching users")
     }
@@ -152,9 +151,10 @@ const Navbar = () => {
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
                             <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
                               <Image
-                                src={item.profilePic}
+                                src={item.profilePic || '/default-user.png'}
                                 alt="User profile"
                                 fill
+                                unoptimized
                                 className="object-cover"
                               />
 

@@ -44,7 +44,6 @@ export async function POST(req) {
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/${username}?paid=false`,
       customer_email: email,
     });
-    console.log(email)
 
     await Payment.create({
       name,

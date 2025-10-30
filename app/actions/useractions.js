@@ -42,7 +42,6 @@ export const fetchUser = async (username) => {
 export async function updateUser(email, updatedData) {
     await mongoose.connect(process.env.MONGO_URI);
     await User.updateOne({email: email}, updatedData)
-    console.log(updatedData)
 }
 
 export const fetchUserByEmail = async (email) => {

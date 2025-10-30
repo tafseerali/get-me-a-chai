@@ -123,7 +123,7 @@ export default function PaymentContent() {
             <div className="min-h-screen w-full flex flex-col items-center relative">
                 {/* Cover Image */}
                 <div className="image w-full h-3/4 flex flex-col items-center mb-16">
-                    <div className="w-[100vw] h-[337.750px] max-[550px]:h-[125px] bg-[#292828] overflow-hidden">
+                    <div className="w-screen h-[337.750px] max-[550px]:h-[125px] bg-[#292828] overflow-hidden relative">
                         <Image
                             src={userData?.profileCover || "/default-cover.png"}
                             alt="User cover"
