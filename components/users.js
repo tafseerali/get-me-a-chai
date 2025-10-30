@@ -11,7 +11,6 @@ const Users = () => {
     const [payments, setPayments] = useState([])
     const [searchTerm, setSearchTerm] = useState("");
     const [userLoading, setuserLoading] = useState(true)
-    const [imgSrc, setImgSrc] = useState(src || '/default-user.png');
 
     useEffect(() => {
         getUserData()
