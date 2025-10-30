@@ -85,13 +85,13 @@ const Users = () => {
                                                 <Link className='w-full h-full flex items-center gap-2 px-2' href={`/${item.username}`}>
                                                     <div className='w-[50px] h-[50px] bg-[#575757] rounded-lg overflow-hidden shrink-0'>
                                                         <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
-                                                            <Image
+                                                            <img
                                                                 src={item.profilePic || "/default-user.png"}
                                                                 alt="User profile"
-                                                                fill
-                                                                unoptimized
-                                                                className="object-cover"
+                                                                onError={(e) => (e.target.src = "/default-user.png")}
+                                                                className="object-cover w-[-webkit-fill-available] h-[-webkit-fill-available]"
                                                             />
+
                                                         </div>
 
                                                     </div>

@@ -150,12 +150,11 @@ const Navbar = () => {
                         <Link className="w-full h-full px-3 py-1 gap-2 flex items-center" href={`/${item.username}`} >
                           <div className='bg-gray-600 w-10 h-10 rounded-full shrink-0 overflow-hidden'>
                             <div className="relative w-[webkit-fill-available] h-[webkit-fill-available]">
-                              <Image
-                                src={item.profilePic || '/default-user.png'}
+                              <img
+                                src={item.profilePic || "/default-user.png"}
                                 alt="User profile"
-                                fill
-                                unoptimized
-                                className="object-cover"
+                                onError={(e) => (e.target.src = "/default-user.png")}
+                                className="object-cover rounded-full w-[-webkit-fill-available] h-[-webkit-fill-available]"
                               />
 
                             </div>
