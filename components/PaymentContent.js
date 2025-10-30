@@ -125,14 +125,10 @@ export default function PaymentContent() {
                 <div className="image w-full h-3/4 flex flex-col items-center mb-16">
                     <div className="w-[100vw] h-[337.750px] max-[550px]:h-[125px] bg-[#292828] overflow-hidden">
                         <Image
-                            src={userData?.profileCover||'/default-cover.png'}
+                            src={userData?.profileCover}
                             alt="User cover"
-                            width={800}
-                            height={337}
+                            fill
                             className="w-full object-cover"
-                            onError={(e) => {
-                                e.currentTarget.src = '/default-cover.png';
-                            }}
                         />
 
                         {!userData?.profileCover && <div className="w-full h-full bg-[#3d3d3d]" />}
@@ -143,14 +139,10 @@ export default function PaymentContent() {
 
 
                             <Image
-                                src={userData?.profilePic||'/default-user.png'}
+                                src={userData?.profilePic}
                                 alt="User profile"
-                                width={100}
-                                height={100}
-                                className="rounded-full w-full h-full object-cover border border-white"
-                                onError={(e) => {
-                                    e.currentTarget.src = '/default-user.png';
-                                }}
+                                fill
+                                className="rounded-full w-[-webkit-fill-available] h-[-webkit-fill-available] object-cover border border-white"
                             />
 
 
